@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Spend Tracker</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <p style="text-align:center; color:#ccc; margin-top:15px; font-size:22px; color:#555; margin-bottom:30px;">7 Day Average:</p>
+    <p style="text-align:center; padding-bottom:25px;"><span style="font-size:24px; color:white; background-color:#53bcbb; border-radius:75px; padding:15px 30px;">${{sevenDayAvg}}</span></p>
+    <ion-grid *ngFor="let d of dailyAmount">
+      <ion-row class="r">
+        <ion-col>{{d.date}}</ion-col>
+        <ion-col text-right>${{d.amount}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>

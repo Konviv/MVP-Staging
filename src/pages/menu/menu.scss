@@ -1,0 +1,8 @@
+.menu {
+  margin-top:10px;
+  border-bottom:1px solid #ddd;
+}
+
+body > ion-app > ng-component > ion-nav > page-menu > ion-menu > div > ion-content > div.scroll-content > ion-list > button > div.item-inner > div {
+  margin-top:-30px;
+}

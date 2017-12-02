@@ -1,0 +1,7 @@
+<ion-tabs [selectedIndex]="myIndex">
+  <ion-tab [root]="buckets" tabIcon="apps"></ion-tab>
+  <ion-tab [root]="accounts" tabIcon="logo-buffer"></ion-tab>
+  <ion-tab [root]="insights" tabIcon="pulse"></ion-tab>
+  <ion-tab [root]="notifications" tabIcon="notifications" [tabBadge]="badgeCount" tabBadgeStyle="danger"
+            (ionSelect)="resetBadgeCount()"></ion-tab>
+</ion-tabs>

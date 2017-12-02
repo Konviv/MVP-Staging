@@ -1,0 +1,102 @@
+<ion-content padding>
+
+  <!--Main top slider-->
+  <ion-card id="tbox">
+    <ion-slides>
+
+      <ion-slide class="expand">
+        <p style="display:block; float:right; font-size:24spx;"><ion-icon style="color:#eee!important;" name="ios-arrow-forward"></ion-icon></p>
+        <div style="padding-bottom:25px; padding-top:15px;"><span style="font-size:24px; color:white; background-color:#53bcbb; border-radius:75px; padding:15px 30px;">${{cashInChecking}}</span></div>
+        <div><span>Cash</span></div>
+        <p style="font-size:10px; color:#AAA;">This is how much total you have sitting in your checking account</p>
+      </ion-slide>
+
+      <ion-slide class="expand">
+        <p style="display:block; float:right; font-size:24spx;"><ion-icon style="color:#eee!important;" name="ios-arrow-forward"></ion-icon></p>
+        <div style="padding-bottom:25px; padding-top:15px;"><span style="font-size:24px; color:white; background-color:#53bcbb; border-radius:75px; padding:15px 30px;">${{creditCardBalance}}</span></div>
+        <div><span>Cash</span></div>
+        <p style="font-size:10px; color:#AAA;">This is how much total you have sitting in your credit card account</p>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-card>
+
+  <!--Display cards-->
+  <div *ngFor="let b of bucketArray; let i=index" style="margin-top:-8px;">
+
+    <!--Green buckets-->
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 >= 100" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#00CD00; height:100%; transition:height 600ms; z-index:1;"><p style="font-size:12px; color:#fff; padding-top:40px;">${{b.bucket_fill}}</p></span>
+      </div>
+       <p style="display:block; float:right; font-size:10px;"><ion-icon style="color:#ccc!important;" name="ios-arrow-forward"></ion-icon></p>
+       <p style="color:#008899; font-size:15px; margin-top:12px;">{{b.Category}}</p>
+       <p style="color:#999!important; font-size:15px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+       <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+    </ion-card>
+
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 < 100 && (b.bucket_fill / b.bucket) * 100 >= 75" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#00CD00; height:80%; transition:height 600ms; z-index:1;"><p style="font-size:12px; color:#434343; padding-top:40px;">${{b.bucket_fill}}</p></span>
+      </div>
+      <p style="display:block; float:right; font-size:10px;"><ion-icon style="color:#ccc!important;" name="ios-arrow-forward"></ion-icon></p>
+      <p style="color:#008899; font-size:15px; margin-top:12px;">{{b.Category}}</p>
+       <p style="color:#999!important; font-size:15px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+       <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+    </ion-card>
+
+    <!--Blue buckets-->
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 < 75 && (b.bucket_fill / b.bucket) * 100 > 50" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#00CCCC; height:65%; transition:height 600ms; z-index:1;"><p style="font-size:12px; color:#434343; padding-top:0px;">${{b.bucket_fill}}</p></span>
+      </div>
+      <p style="display:block; float:right; font-size:10px;"><ion-icon style="color:#ccc!important;" name="ios-arrow-forward"></ion-icon></p>
+      <p style="color:#008899; font-size:15px; margin-top:12px;">{{b.Category}}</p>
+      <p style="color:#999!important; font-size:15px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+      <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+    </ion-card>
+
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 == 50" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#00CCCC; height:50%; transition:height 600ms; z-index:1;"><p style="font-size:12px; color:#434343; padding-top:0px;">${{b.bucket_fill}}</p></span>
+      </div>
+      <p style="display:block; float:right; font-size:10px;"><ion-icon style="color:#ccc!important;" name="ios-arrow-forward"></ion-icon></p>
+      <p style="color:#008899; font-size:15px; margin-top:12px;">{{b.Category}}</p>
+      <p style="color:#999!important; font-size:15px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+      <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+    </ion-card>
+
+    <!--Yellow Bucket-->
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 < 50 && (b.bucket_fill / b.bucket) * 100 >= 25" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#FFFF00; height:35%; transition:height 600ms; z-index:1;"><p style="font-size:12px; color:#434343; padding-top:0px;">${{b.bucket_fill}}</p></span>
+      </div>
+      <p style="display:block; float:right; font-size:10px;"><ion-icon style="color:#ccc!important;" name="ios-arrow-forward"></ion-icon></p>
+      <p style="color:#008899; font-size:15px; margin-top:12px;">{{b.Category}}</p>
+      <p style="color:#999!important; font-size:15px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+      <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+    </ion-card>
+
+    <!--Pink buckets-->
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 < 25 && (b.bucket_fill / b.bucket) * 100 > 0" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#FF3DC1; height:15%; transition:height 600ms; z-index:1;"><p style="font-size:12px; color:#434343; padding-top:0px;">${{b.bucket_fill}}</p></span>
+      </div>
+      <p style="display:block; float:right; font-size:10px;"><ion-icon style="color:#ccc!important;" name="ios-arrow-forward"></ion-icon></p>
+      <p style="color:#008899; font-size:15px; margin-top:12px;">{{b.Category}}</p>
+      <p style="color:#999!important; font-size:15px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+      <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+    </ion-card>
+
+    <ion-card style="padding-top:10px;" class="bumpbox" *ngIf="(b.bucket_fill / b.bucket) * 100 <= 0 || b.bucket <= 0" (click)="pushBucket(b)">
+      <div class="circle">
+        <span style="position:absolute; bottom:0; left:0; width:100%; background:#FF3DC1; height:0%; transition:height 600ms; z-index:1;"></span>
+      </div>
+      <p style="color:#333!important; font-size:22px; font-weight:bold;">Balance: ${{b.bucket_fill}}</p>
+      <p style="color:#333!important;">Bucket Capacity: ${{b.bucket}}</p>
+      <p style="color:#008899; font-size:15px;">{{b.Category}}</p>
+    </ion-card>
+
+  </div>
+
+</ion-content>

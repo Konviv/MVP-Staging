@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Checking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!--Available balance-->
+  <ion-card>
+    <ion-card-header>
+      Available balance $1204.35
+    </ion-card-header>
+  </ion-card>
+
+  <!--List of transactions-->
+  <ion-card>
+    <ion-card-header>
+      Transactions
+      <button ion-button>Most Recent</button>
+      <button ion-button (click)="toggleShowMore()">Show more</button>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let t of transactions">
+        <div float-left>{{t.name}}</div>
+        <div float-right>{{t.amount}}</div>
+      </ion-item>
+    </ion-list>
+
+  </ion-card>
+
+</ion-content>

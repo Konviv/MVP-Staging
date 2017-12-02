@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adjust Bucket Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Bucket name: </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bucket capacity: </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label id="type">Bucket type: </ion-label>
+    <ion-select>
+      <ion-option>Main</ion-option>
+      <ion-option>Savings</ion-option>
+      <ion-option>Bills</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <button class="small btn" float-left ion-button (click)="exitModal()"><span style="color:white;">Save</span></button>
+    <button class="small btn" float-left ion-button (click)="exitModal()"><span style="color:white;">Cancel</span></button>
+  </ion-item>
+
+</ion-content>

@@ -1,0 +1,15 @@
+#tab-t0-0, #tab-t0-1, #tab-t0-2, #tab-t0-3 {
+  height:80px;
+  font-family:'Helvetica';
+  text-align:center;
+  margin:10px;
+  font-weight:bold;
+  border-radius: 50%;
+  border:2px solid #fff;
+  box-shadow: 0 0 7px gray;
+}
+
+#tab-t0-0 > span, #tab-t0-1 > span, #tab-t0-2 > span, #tab-t0-3 > span {
+  font-size:10px;
+  color:#666;
+}

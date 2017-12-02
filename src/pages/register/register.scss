@@ -1,0 +1,17 @@
+#reg {
+    background-image:url('https://raw.githubusercontent.com/Konviv/temp-pics/master/rg.jpg');
+    background-size:cover;
+    margin-top:0px;
+}
+
+input[type=text], input[type=password] {
+    padding: 12px 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color:transparent;
+    border-bottom: 2px solid white;
+}
+
+.btn {
+  padding:40px 10px;
+}

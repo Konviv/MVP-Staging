@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button float-left clear></button>
+
+    <ion-title>All Transactions</ion-title>
+    <!-- <ion-title>{{acct_name}}</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let t of transactions">
+      <div float-left>{{t.name}}</div>
+      <div float-right>{{t.amount}}</div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

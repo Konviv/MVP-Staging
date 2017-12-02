@@ -1,0 +1,33 @@
+<ion-header class="toptool">
+
+  <ion-navbar>
+    <ion-title>Log in</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item style="margin:50px 10px 10px 10px;">
+    <h1 style="color:#222; font-size:28px;"><span style="font-size:48px; font-family:'Sounds Good';">konviv</span><br /> financial empowerment for all</h1><br />
+<h3 style="width:350px;">We make managing your money as easy as talking to a friend.</h3>
+  </ion-item>
+
+    <form (ngSubmit)="doLogin()" style="margin-top:40px;">
+       <ion-item>
+         <ion-input placeholder="email" type="text" [(ngModel)]="user.email" name="email" style="border-bottom:1px solid #ddd;"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-input placeholder="password" type="password" [(ngModel)]="user.password" name="password" style="border-bottom:1px solid #ddd;"></ion-input>
+       </ion-item>
+       <button style="margin-left:26px;" ion-button class="btn" small type="submit" block><span style="color:white;">Login</span></button>
+     </form>
+
+    <ion-item>
+      <button ion-button class="btn" small block (click)="registerUser()"><span style="color:white;">Create an Account</span></button>
+    </ion-item>
+    <ion-item>
+      <button ion-button class="btn" small block (click)="tellMeMore()"><span style="color:white;">Tell Me More!</span></button>
+    </ion-item>
+</ion-content>

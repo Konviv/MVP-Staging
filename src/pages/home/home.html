@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+      <!--<button ion-button color="dark" clear float-start>-->
+        <!--<ion-icon name="chatbubbles"></ion-icon>-->
+      <!--</button>-->
+
+    <ion-title (click)="pushHome()">konviv</ion-title>
+
+      <!--<button ion-button clear>-->
+        <!--<img src="https://raw.githubusercontent.com/Konviv/KonvivMVP/master/logo.jpg"-->
+             <!--alt="KONVIV"-->
+             <!--height="30"-->
+             <!--width="30">-->
+      <!--</button>-->
+
+      <!--<button ion-button color="dark" clear float-end>-->
+        <!--<ion-icon name="person"></ion-icon>-->
+      <!--</button>-->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!--Top tabs-->
+  <ion-tabs tabsPlacement="top" selectedIndex="1">
+    <ion-tab tabTitle="Bills" tabsPlacement="top" [root]="tab0" class="tab2"></ion-tab>
+    <ion-tab tabTitle="Spending" tabsPlacement="top" [root]="tab1" class="tab2"></ion-tab>
+    <ion-tab tabTitle="Savings" tabsPlacement="top" [root]="tab2" class="tab2"></ion-tab>
+  </ion-tabs>
+
+</ion-content>

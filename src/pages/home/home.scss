@@ -1,0 +1,18 @@
+page-home {
+
+  /* Align chatbot, logo, and profile buttons */
+  .btn-wrapper {
+    text-align: center;
+  }
+}
+
+#tab-t1-0 > span, #tab-t1-1 > span, #tab-t1-2 > span {
+  width:100px;
+  height:30px;
+  padding-top:10px;
+  font-size:10px;
+  text-decoration:none;
+  border-radius:0!important;
+  border:none!important;
+  overflow:hidden;
+}

@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Accounts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding onload="getAmountSpent()">
+  <!--<ion-content class="card-background-page">-->
+
+  <button ion-button small icon-start full color="light" (click)="loadAccounts()">
+    <span style="font-size:10px;">Update Account</span>
+  </button>
+
+  <h3>Accounts</h3>
+  <!--Push transaction page with name of account and id-->
+  <ion-item *ngFor="let a of accounts let i=index">
+    <div float-left (click)="listSingleAccTrans(a.accountId, a.subtype)">{{a.subtype}}</div>
+    <div float-right>${{a.balance}}</div>
+  </ion-item>
+
+  <!--<ion-card style="padding-top:10px;" class="bumpbox">-->
+    <!--&lt;!&ndash;Show accounts&ndash;&gt;-->
+    <!--<ion-card-title>Accounts</ion-card-title>-->
+
+    <!--&lt;!&ndash;Push transaction page with name of account and id&ndash;&gt;-->
+    <!--<ion-item *ngFor="let a of accounts let i=index">-->
+      <!--<div float-left (click)="listSingleAccTrans(a.accountId, a.subtype)">{{a.subtype}}</div>-->
+      <!--<div float-right>${{a.balance}}</div>-->
+    <!--</ion-item>-->
+  <!--</ion-card>-->
+
+  <h3>
+    Last Transactions
+    <button id="read-all" ion-button icon-end small round float-right (click)="pushAllTransactions(transactions)">
+      Read All
+    </button>
+  </h3>
+
+  <ion-item style="color:#333;" *ngFor="let t of transactions | slice:0:3; let i=index">
+    <div *ngIf="i<4" float-left>{{t.name}}</div>
+    <div *ngIf="i<4" float-right>${{t.amount}}</div>
+  </ion-item>
+
+  <!--List of recent transactions-->
+  <!--<ion-card id="transactions" style="padding-top:10px;" class="bumpbox">-->
+    <!--<ion-card-title>-->
+      <!--Last Transactions-->
+      <!--<button id="read-all" ion-button icon-end small round float-right (click)="pushAllTransactions(transactions)">-->
+        <!--Read All-->
+      <!--</button>-->
+    <!--</ion-card-title>-->
+
+    <!--<ion-item style="color:#333;" *ngFor="let t of transactions | slice:0:3; let i=index">-->
+      <!--<div *ngIf="i<4" float-left>{{t.name}}</div>-->
+      <!--<div *ngIf="i<4" float-right>${{t.amount}}</div>-->
+    <!--</ion-item>-->
+  <!--</ion-card>-->
+
+  <!--Amount spent in 3 days-->
+<ion-card>
+  <div id="card">
+    <div><span style="font-size:16px; color:#fff; line-height:1.5em; font-weight: 400; font-family:'Avenir';">You have spent <br /><span style="font-size:30px; color:white;">${{amountSpent}}</span><br /> in the last 3 days</span></div>
+  </div>
+</ion-card>
+
+</ion-content>

@@ -1,0 +1,71 @@
+page-accounts {
+    .card-background-page {
+
+          ion-card {
+            position: relative;
+            text-align: center;
+          }
+
+          .card-title {
+            position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+          }
+
+          .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: #fff;
+          }
+
+        }
+
+
+}
+
+ion-card-title {
+  padding:20px!important;
+}
+
+#card {
+  padding-bottom:25px;
+  padding-top:15px;
+  font-size:18px;
+  color:white;
+  text-align:center;
+  background-color:#53bcbb;
+  border-radius:75px;
+  margin:10px;
+  padding:15px 30px;
+}
+
+#transactions {
+  border-bottom:1px solid #eee;
+}
+
+#read-all {
+  background-color:white!important;
+  font-size:10px;
+  margin-top:-10px;
+}
+
+.card-title-md {
+  font-size:14px;
+}
+
+#tabpanel-t0-1 > page-accounts > ion-content > div.scroll-content > button {
+  padding:20px;
+}
+
+[float-right] {
+  margin-right:65px;
+}
+
+.button-small-md {
+  height:3.1em;
+}

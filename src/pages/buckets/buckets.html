@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button clear float-left (click)="exitModal()"><span style="margin-top:10px;"><ion-icon
+      name="md-arrow-back"></ion-icon></span></button>
+    <ion-title mode="ios">{{bucket.Category}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item style="margin-top:20px;" float-center>
+
+    <!--Display bucket-->
+    <!--Green buckets-->
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 >= 100">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00CD00; height:100%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 < 100 && (bucket.bucket_fill / bucket.bucket) * 100 >= 75">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00CD00; height:80%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <!--Blue buckets-->
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 < 75 && (bucket.bucket_fill / bucket.bucket) * 100 > 50">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00CCCC; height:65%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 == 50">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00CCCC; height:50%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <!--Yellow Bucket-->
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 < 50 && (bucket.bucket_fill / bucket.bucket) * 100 >= 25">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#FFFF00; height:35%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <!--Pink buckets-->
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 < 25 && (bucket.bucket_fill / bucket.bucket) * 100 > 0">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#FF3DC1; height:15%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle4" float-center *ngIf="(bucket.bucket_fill / bucket.bucket) * 100 <= 0">
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#FF3DC1; height:0%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <!--Bucket details-->
+    <div style="margin-top:200px;">
+      <div><p style="color:#AAA;">Amount in Bucket: ${{bucket.bucket_fill}}</div>
+      <div>Total Bucket Capacity: ${{bucket.bucket}}</div>
+    </div>
+  </ion-item>
+
+  <!--Buttons to edit bucket-->
+  <button style="margin-left:40px;" class="btn" ion-button (click)="pushAdjustBucketPage()"><span
+    style="color:white; padding:10px 30px;">Adjust bucket</span></button>
+
+  <button style="margin:20px 0px" class="btn" ion-button (click)="pushTransferMoneyPage()"><span
+    style="color:white; padding:10px 30px;">Transfer Money</span></button>
+
+  <!--List of transactions for bucket-->
+  <ion-card id="innerbox">
+    <h1 style="text-align:center; font-size:12px; padding:10px 0px; border-bottom:1px solid #eee; color:#999;">Transaction History</h1>
+
+    <ion-item *ngFor="let t of bucketTransactions | slice:0:6" (click)="openMoveTransaction(t)" class="item">
+      <ion-row>
+        <ion-col text-left>{{t.date}}</ion-col>
+        <ion-col class="name">{{t.name}}</ion-col>
+        <ion-col text-right class="number">${{t.amount}}</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

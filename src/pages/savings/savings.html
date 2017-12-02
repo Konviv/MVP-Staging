@@ -1,0 +1,54 @@
+<ion-content padding>
+
+  <!--Available balance-->
+  <ion-card>
+    <ion-card-header>
+      Available balance $203.44
+    </ion-card-header>
+  </ion-card>
+
+  <!--List of transactions-->
+  <ion-card>
+    <ion-card-header>
+      Transactions
+      <button ion-button>Most Recent</button>
+      <button ion-button (click)="toggleShowMore()">Show more</button>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let t of transactions">
+        <div float-left>{{t.name}}</div>
+        <div float-right>{{t.amount}}</div>
+      </ion-item>
+    </ion-list>
+
+    <!--<ion-list>-->
+
+      <!--<ion-card>-->
+        <!--<div>In-n-Out</div>-->
+        <!--<div>$10.99</div>-->
+        <!--<div>2017-03-02</div>-->
+      <!--</ion-card>-->
+
+      <!--<ion-card>-->
+        <!--<div>Round Table Pizza</div>-->
+        <!--<div>$30.32</div>-->
+        <!--<div>2017-02-28</div>-->
+      <!--</ion-card>-->
+
+      <!--<ion-card *ngIf="showMore">-->
+        <!--<div>Asian Express</div>-->
+        <!--<div>$8.83</div>-->
+        <!--<div>2017-02-15</div>-->
+      <!--</ion-card>-->
+
+      <!--<ion-card *ngIf="showMore">-->
+        <!--<div>Jamba Juice</div>-->
+        <!--<div>$6.99</div>-->
+        <!--<div>2017-02-08</div>-->
+      <!--</ion-card>-->
+
+    <!--</ion-list>-->
+  </ion-card>
+
+</ion-content>

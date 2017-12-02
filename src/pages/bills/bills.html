@@ -1,0 +1,55 @@
+<ion-content padding>
+
+  <!--Today's date-->
+  <h1 style="text-align:center; color:#ccc; margin-top:20px;">Today is:</h1>
+  <ion-card text-center style="border-bottom:1px solid #ddd; padding-bottom:35px; padding-top:15px;"><span style="color:white; background-color:#53bcbb; border-radius:75px; padding:15px 30px;">{{month}} {{day}}</span></ion-card>
+  <!--Next bill due-->
+  <ion-card>
+    <ion-card-header text-center><span style="color:#999;">We estimate that your next bill due is:</span>
+    <br /><span style="font-size:10px; color:#ccc;">Based on the payment from last month</span></ion-card-header>
+    <ion-grid id="nextbill">
+      <ion-row *ngIf="bills.length > 0; else noBills">
+        <ion-col><span style="color:white;">{{upcomingBillName}}</span></ion-col>
+        <ion-col><span style="color:white; margin-left:35px;">${{upcomingBillAmount}}</span></ion-col>
+        <ion-col><span style="color:white;">Due {{billDate}}</span></ion-col>
+      </ion-row>
+      <ng-template #noBills>No bills found on current account.</ng-template>
+    </ion-grid>
+  </ion-card>
+
+<ion-card id="billsbox">
+  <div id="bi">
+  <p style="font-size:14px; padding:10px; color:#444!important;">Monthly List of Bills:</p>
+  </div>
+
+  <ion-grid *ngFor="let b of tempBills">
+    <ion-row class="rowing" *ngIf="b != null">
+      <ion-col>{{b.name}}</ion-col>
+      <ion-col><span style="margin-left:35px;">${{b.amount}}</span></ion-col>
+      <ion-col>Last paid: {{b.date}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+
+  <!--Display bill buckets-->
+  <ion-card>
+    <div>
+      <!--<ion-slide *ngFor="let b of bucketArray">-->
+        <!--<canvas width="130" height="130"></canvas>-->
+        <!--<canvas width="130" height="130"></canvas>-->
+      <!--</ion-slide>-->
+
+      <div *ngFor="let b of billBuckets; let i=index">
+        <div class="circle1">
+          <p style="position:relative; color:#e5e5e5!important; font-size:12px; font-weight:bold; z-index:3">{{b.bucketname}}</p>
+          <p style="position:relative; color:#e5e5e5!important; font-size:12px; font-weight:bold; z-index:3">${{b.bucketfill}}</p>
+          <p style="position:relative; color:#FFFFFF; font-size:12px; z-index:3" *ngIf="b.bucketfill==b.bucketsize; else need">Ready to pay</p>
+          <ng-template style="position:absolute; color:#FFFFFF; font-size:15px; z-index:3" #need>Need ${{b.bucketsize-b.bucketfill}}</ng-template>
+          <span style="position:absolute; bottom:0; left:0; width:100%; background:#5ba597; height:100%; transition:height 600ms; z-index:1;"></span>
+        </div>
+
+      </div>
+    </div>
+  </ion-card>
+
+</ion-content>

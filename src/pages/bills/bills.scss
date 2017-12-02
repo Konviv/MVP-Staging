@@ -1,0 +1,66 @@
+#tbox {
+  padding:5px;
+  margin:0px;
+  background-color:transparent!important;
+}
+
+.circle1 {
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  border: 6px solid #d4d4d4;
+  color: white;
+  z-index: 2;
+  float:left;
+  margin-right:20px;
+  font-size:90px;
+}
+
+div.scroll-content > ion-card > div > div > div > p {
+  margin-top:10px;
+}
+
+#nextbill {
+  background-color:#53bcbb;
+  color: white;
+  padding: 20px;
+  border-radius:50px;
+  margin:-2px 0px 30px 7px;
+  width:365px;
+}
+
+.rowing {
+  border-bottom: 1px solid #CCC;
+  font-size:12px;
+  padding: 20px 0px;
+}
+
+#tabpanel-t1-0 > page-bills {
+  margin-top:-45px!important;
+}
+
+div.scroll-content > ion-card:nth-child(5) > div > div:nth-child(1) {
+  margin-top:-70px;
+
+}
+
+#bi {
+  padding:0px;
+  margin-left:-15px;
+  margin-top:-15px;
+  border-bottom:1px solid #ddd;
+  background-color:#efefef;
+  width:400px;
+}
+
+#billsbox {
+  margin:5px 5px 5px 5px!important;
+  padding:15px;
+  width:380px;
+  background-color:white!important;
+  border:1px solid #eee;
+  border-radius:3px;
+}

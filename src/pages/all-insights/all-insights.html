@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button float-left style="opacity:0;"></button>
+
+    <ion-title>Past Insights</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item class="past" text-wrap>This month you’ve made {{numTransactions}} transactions at {{location}}, spending a total of ${{amount}}.</ion-item>
+
+  <ion-item class="past" text-wrap>Last month you spent ${{previousMonthlySpending}}. So far this month, you have spent ${{monthlySpending}}.</ion-item>
+
+  <ion-item class="past" text-wrap>This week, you spent an average of ${{weeklyAvg}} for "Eating Out".</ion-item>
+</ion-content>

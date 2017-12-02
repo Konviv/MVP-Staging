@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Insights</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-card>
+          <h1 id="title">Did you know?</h1>
+</ion-card>
+
+  <!--Insight slider-->
+  <ion-card class="bumpbox" style="height:440px;">
+    <ion-slides pager>
+      <ion-slide style="background-color:#00aba3;">
+        <img src="https://github.com/Konviv/temp-pics/blob/master/piggybank.jpg?raw=true" style="padding-left:48px; width:300px;" alt="piggy bank" />
+        <br /><br />
+        <h1 text-wrap class="insight"><span style="color:white;">As of today, you’ve spent ${{amountSaved}} less than at this point last month for “Eating Out”.</span></h1>
+        <p style="font-size:12px; opacity:0.4; margin-top:-20px; margin-bottom:10px;">Swipe right to see Next -></p>
+      </ion-slide>
+
+      <ion-slide style="background-color:#0196da;">
+        <img src="https://github.com/Konviv/temp-pics/blob/master/benji2.jpg?raw=true" style="padding-left:48px; width:290px;" alt="100" />
+        <br /><br />
+        <h1 text-wrap class="insight"><span style="color:white;">There were {{numberOfTransactionsOver100}} transactions this month that were over $100.</span></h1>
+        <p style="font-size:12px; opacity:0.4; margin-top:-20px; margin-bottom:10px;">Swipe right to see Next -></p>
+      </ion-slide>
+
+      <ion-slide>
+        <img src="https://github.com/Konviv/temp-pics/blob/master/monec.jpg?raw=true" style="margin-bottom:5px; margin-top:-20px; padding-left:48px; width:290px;" alt="money" />
+        <br />
+        <h1 text-wrap class="insight">This month you’ve spent ${{monthlySpending}} so far, which is an average of ${{dailyAverage}} per day.</h1>
+        <p style="font-size:12px; opacity:0.4; margin-top:-20px; margin-bottom:10px;">Swipe right to see Next -></p>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-card>
+
+  <!--See all insights-->
+  <ion-card id="footer">
+  <button class="btn in" ion-button clear (click)="pushAllInsights()"><span style="color:white;">See past insights</span></button>
+  </ion-card>
+
+</ion-content>

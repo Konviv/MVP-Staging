@@ -1,0 +1,43 @@
+.ton {
+  font-size:10px;
+  color:white;
+  background-color:#888;
+  color:white;
+  font-weight: 600;
+  vertical-align: 0;
+  letter-spacing: -.01em;
+  margin:2px;
+  margin-right:-3px;
+  transition: .3s box-shadow,.3s background;
+}
+
+.circle2 {
+  position: relative;
+  margin: auto;
+  border-radius: 100%;
+  overflow: hidden;
+  height: 190px;
+  width: 190px;
+  text-align: center;
+  border: 6px solid #d4d4d4;
+  color: white;
+  z-index: 2;
+  float:left;
+  font-size:90px;
+}
+
+div.scroll-content > ion-card:nth-child(2) > div > div > p:nth-child(1) {
+  padding-top:50px;
+}
+
+div.scroll-content > ion-card:nth-child(4) > div > div > p:nth-child(1) {
+  margin-top:50px;
+}
+
+#tabpanel-t1-2 > page-savings-bucket > ion-content > div.scroll-content {
+  margin-top:75px;
+}
+
+#tabpanel-t1-2 > page-savings-bucket > ion-content > div.scroll-content {
+  margin-top:75px!important;
+}

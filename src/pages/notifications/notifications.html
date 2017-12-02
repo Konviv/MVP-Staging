@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar id="nav">
+
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <!--New notifications-->
+  <div>
+    <p class="smalltitle" id="top">
+      NEW
+      <ion-badge badge item-end>{{badgeCount}}</ion-badge>
+      <span class="smalltitle" style="border:0px!important; margin-left:200px;">Mark All Read</span>
+    </p>
+  </div>
+
+  <ion-card *ngFor="let n of newNotifications" style="border-bottom:1px solid #eee;">
+    <ion-card-title class="active" (click)="postNotifications(n)">{{n.text}}</ion-card-title>
+  </ion-card>
+
+  <!--Past notifications-->
+  <div>
+    <p class="smalltitle" id="bottom">PAST NOTIFICATIONS</p>
+  </div>
+
+  <ion-item class="old" *ngFor="let n of oldNotifications | slice:0:5" style="padding-top:10px;" class="bumpbox">
+    <ion-icon name="ios-arrow-dropright"></ion-icon>
+    {{n.name}}
+  </ion-item>
+
+</ion-content>

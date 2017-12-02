@@ -1,0 +1,117 @@
+<ion-content padding center style="text-align:center;">
+
+  <h1 style="text-align:center; color:#ccc; margin-top:0px; margin-bottom:15px;">Amount in Savings: ${{amountInSavings}}</h1>
+  <ion-card text-center style="padding-bottom:35px; padding-top:15px;"><span style="color:white; background-color:#53bcbb; border-radius:75px; padding:15px 30px;">{{month}} {{day}}</span></ion-card>
+
+  <ion-card style="maring-top:10px;">
+    <p style="font-size:16px;">See your recommended emergency savings</p>
+  </ion-card>
+
+  <ion-card>
+    <div style="margin:-5px 0px 30px 90px;">
+    <!--Draw bucket at appropriate level-->
+    <div class="circle2" *ngIf="(amountInSavings/savingsTotal) * 100 >= 100 && savingsTotal > 0 && amountInSavings > 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:100%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle2"
+         *ngIf="(amountInSavings/savingsTotal) * 100 < 100 && (amountInSavings/savingsTotal) * 100 >= 75 && savingsTotal > 0 && amountInSavings > 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:80%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle2"
+         *ngIf="(amountInSavings/savingsTotal) * 100 < 75 && (amountInSavings/savingsTotal) * 100 > 50 && savingsTotal > 0 && amountInSavings > 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:60%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle2" *ngIf="(amountInSavings/savingsTotal) * 100 == 50 && savingsTotal > 0 && amountInSavings > 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:50%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle2"
+         *ngIf="(amountInSavings/savingsTotal) * 100 < 50 && (amountInSavings/savingsTotal) * 100 >= 25 && savingsTotal > 0 && amountInSavings > 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:35%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle2"
+         *ngIf="(amountInSavings/savingsTotal) * 100 < 25 && (amountInSavings/savingsTotal) * 100 > 0 && savingsTotal > 0 && amountInSavings > 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:20%; transition:height 600ms; z-index:1;"></span>
+    </div>
+
+    <div class="circle2" *ngIf="(amountInSavings/savingsTotal) * 100 <= 0 || savingsTotal == 0 || amountInSavings == 0">
+      <p style="position:relative; color:#e5e5e5!important; font-size:24px; font-weight:bold; z-index:3">
+        ${{amountInSavings}}</p>
+      <p style="position:relative; color:#333!important; font-size:20px; font-weight:bold; z-index:3">of
+        ${{savingsTotal}}</p>
+      <span
+        style="position:absolute; bottom:0; left:0; width:100%; background:#00c1b0; height:0%; transition:height 600ms; z-index:1;"></span>
+    </div>
+  </div>
+</ion-card>
+
+<ion-card>
+  <div style="margin-top:0px;">
+    <!--Buttons for different time ranges-->
+    <ion-row>
+      <ion-col>
+        <button class="ton" ion-button (click)="changeSavingsTotal(3)"><span style="color:white;">3 Months</span>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button class="ton" ion-button (click)="changeSavingsTotal(6)"><span style="color:white;">6 Months</span>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button class="ton" ion-button (click)="changeSavingsTotal(9)"><span style="color:white;">9 Months</span>
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button class="ton" ion-button (click)="changeSavingsTotal(12)"><span style="color:white;">12 Months</span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-card>
+
+  <ion-card>
+    <p style="padding:10px; color:#888;">We are showing you how much you have saved out of the 3, 6, 9, or 12 month goal</p>
+  </ion-card>
+
+  <ion-card>
+    <p style="padding:20px; border-top:1px solid #ccc; color:#ccc;">Coming soon: Create your own savings goals</p>
+  </ion-card>
+
+</ion-content>

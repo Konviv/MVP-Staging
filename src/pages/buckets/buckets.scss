@@ -1,0 +1,63 @@
+ion-item > div.item-inner > div {
+  padding-bottom:25px;
+}
+
+.toolbar-title-ios {
+  font-size:22px;
+  margin-left:-15px;
+  border-bottom:0px!important;
+  box-shadow:0!important;
+}
+
+div.item-inner > div > ion-label > ion-row > ion-col {
+  font-size:12px;
+  border-bottom:1px solid #eee;
+  padding:0px 10px 15px 10px;
+}
+
+#innerbox {
+  padding:0px;
+  margin:5px;
+}
+
+.number {
+  color:#24a53c;
+}
+
+.toolbar-title-md {
+          color: #444;
+          font-family: 'Helvetica Neue';
+          letter-spacing: 1px;
+          font-weight:600;
+          font-size:30px;
+          padding:10px;
+          background:white; /* For browsers that do not support gradients */
+  }
+.toolbar-title-ios {
+          color: #444;
+          font-family: 'Helvetica Neue';
+          font-weight:600;
+          font-size:30px;
+          padding:10px;
+          background:white; /* For browsers that do not support gradients */
+}
+
+.circle4 {
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+  height: 170px;
+  width: 170px;
+  text-align: center;
+  border: 6px solid #d4d4d4;
+  color: white;
+  z-index: 2;
+  margin:0px 0px -180px 110px;
+  font-size:90px;
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

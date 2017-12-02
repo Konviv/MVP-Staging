@@ -1,0 +1,41 @@
+#pic5 {
+    background-image:url('https://raw.githubusercontent.com/Konviv/temp-pics/master/pic5.jpg');
+    background-size:cover;
+    margin-top:0px;
+}
+
+.item-ios {
+  background:transparent;
+}
+
+.toptool {
+  display:none;
+}
+
+.big {
+    font-family:'Sounds Good'!important;
+    font-size:26px!important;
+}
+
+.item-ios.item-block .item-inner {
+  border-bottom:0px;
+}
+
+.scroll-content > ion-card > div {
+  margin-top:60px;
+  background-color: transparent;
+  padding:20px;
+  font-size:26px;
+  text-align:center;
+}
+
+.card-ios {
+  background:transparent;
+  border:0xp;
+  box-shadow:none!important;
+  margin-bottom:305px;
+}
+
+.card-md {
+  background:transparent;
+}

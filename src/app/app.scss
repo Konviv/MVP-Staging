@@ -1,0 +1,216 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+.col {
+  padding:0px;
+}
+
+.grid {
+  padding:0px;
+}
+
+.card-md {
+  box-shadow:none;
+  margin:5px 0px !important;
+  padding-left:-10px !important;
+  width:100%;
+}
+
+.text-input {
+  border:1px solid #eee;
+  background-color:white;
+  padding:10px;
+}
+
+.label-md {
+  font-size:14px!important;
+  margin:0px!important;
+}
+
+.tab-button-text {
+  color:#888;
+}
+
+.btn {
+  color:white;
+  background-color:#58bcba;
+  padding:25px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: 0;
+  letter-spacing: -.01em;
+  margin:15px;
+  transition: .3s box-shadow,.3s background;
+  border-radius:50px;
+  width:360px;
+}
+
+.btn:hover {
+  background-color:#444!important;
+}
+
+.item-md {
+  box-shadow:none;
+  background:transparent!important;
+}
+
+.tabs-md .tab-button-icon {
+  font-size:3.1rem!important;
+  height:1em;
+  color:#434343;
+}
+
+.bumpbox {
+  margin:5px 5px 5px 5px!important;
+  padding:15px;
+  height:120px;
+  width:375px;
+  background-color:white!important;
+  border:1px solid;
+  border-radius:3px;
+  border-color:#e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+#tabpanel-t1-1 > page-main > ion-content > div.scroll-content {
+    margin-top:22px!important;
+    background: #e9ebee; /* For browsers that do not support gradients */
+}
+
+ion-navbar.toolbar {
+  border-bottom:1px solid #ddd;
+}
+
+img {
+  border:transparent !important;;
+}
+
+* {
+  font-weight:600;
+  color:#656f7a;
+  font-family: 'Varela';
+}
+
+button {
+  color:white!important;
+}
+
+.tabs-md .tabbar {
+  background-color:white;
+}
+
+ion-navbar {
+  text-align:center;
+}
+
+ion-title {
+  margin-left:-45px !important;
+}
+
+canvas {
+    height:175px;
+    width:175px;
+    margin:-15px -15px 0px -15px;
+}
+
+.label-ios {
+  margin:0px;
+}
+
+.tab-button {
+    margin:5px;
+}
+
+.update {
+  padding:10px 30px;
+  border:1px solid #999;
+  border-radius:100px;
+}
+
+.grey {
+  background-color:#454545;
+}
+
+.bbox {
+  border:1px solid #CCC;
+  padding:5px 25px;
+  border-radius:5px;
+}
+
+.item-md.item-block .item-inner {
+    border-bottom:0px;
+    margin-bottom:-25px;
+}
+
+.small {
+  padding:20px 10px;
+  width:140px;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-text {
+  background-color:white;
+  padding:10px 22px;
+  color:#444;
+  font-size:11px;
+}
+
+@font-face {
+  font-family: 'Sounds Good';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sounds Good'), local('Sounds Good'), url(../assets/fonts/sounds-good.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Varela';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Varela'), local('Varela'), url(../assets/fonts/varela-round.woff2) format('woff2');
+}
+
+canvas, progress, video {
+  margin-left:0px;
+}
+
+.toolbar-md {
+  padding:0px;
+}
+
+.tabs-md .tab-button {
+    min-height: 3em;
+    font-weight: normal;
+    color: #222;
+    padding: 0;
+    background-color:white;
+    border:1px solid #eee;
+    border-radius:50px;
+    box-shadow: 0 0 2px #ddd;
+  }
+
+.show-tabbar {
+  border-bottom:1px solid #fff;
+}
+
+.toolbar-content-md > ion-title > div {
+          color: white!important;
+          font-family: 'Sounds Good';
+          letter-spacing: 1px;
+          font-weight:400;
+          font-size:20px;
+          padding:10px;
+          background:#1eaab3!important; /* For browsers that do not support gradients */
+  }
+  .toolbar-title-ios {
+          color: white!important;
+          font-family: 'Sounds Good';
+          font-weight:400;
+          font-size:30px;
+          padding:10px;
+          background:#1eaab3!important; /* For browsers that do not support gradients */
+      }
+  .toolbar-background-md{
+    background:#1eaab3; /* For browsers that do not support gradients */
+         }
+  .toolbar-background-ios{
+    background:#1eaab3; /* For browsers that do not support gradients */
+         }
